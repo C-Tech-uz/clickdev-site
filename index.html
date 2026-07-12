@@ -3,45 +3,76 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Click Dev — разработка продуктов экосистемы Click</title>
-<meta name="description" content="Click Dev — IT-компания группы Click. Разработка программного обеспечения: платформы, мини-приложения, AI-решения. Резидент IT Park Uzbekistan.">
+<title>Click Dev — разработка цифровых продуктов: платформы, приложения, AI</title>
+<meta name="description" content="Click Dev строит цифровые продукты под ключ: платформы, приложения и AI-решения. Родом из экосистемы Click. Резидент IT Park Uzbekistan.">
 <link rel="icon" type="image/svg+xml" href="assets/mark.svg">
 <style>
 :root { --blue:#0065FF; --dark:#181926; --px:#397FE6; }
 * { margin:0; padding:0; box-sizing:border-box; }
 html { scroll-behavior:smooth; }
 body { font-family:ui-rounded,-apple-system,'Segoe UI',Roboto,sans-serif; color:#1a2033; background:#fff; line-height:1.6; }
-.wrap { max-width:1080px; margin:0 auto; padding:0 24px; }
+.wrap { max-width:1160px; margin:0 auto; padding:0 24px; }
 
-header { position:fixed; top:0; left:0; right:0; z-index:10; background:rgba(24,25,38,.92); backdrop-filter:blur(8px); }
+header { position:fixed; top:0; left:0; right:0; z-index:20; background:rgba(24,25,38,.92); backdrop-filter:blur(8px); }
 header .wrap { display:flex; align-items:center; justify-content:space-between; height:60px; }
 .brand { display:flex; align-items:center; gap:10px; color:#fff; font-weight:800; font-size:18px; text-decoration:none; }
 .brand img { width:30px; height:30px; border-radius:8px; background:#fff; padding:2px; }
 .langs { display:flex; gap:4px; }
-.langs button { background:none; border:1px solid rgba(255,255,255,.25); color:rgba(255,255,255,.75); border-radius:8px; padding:4px 10px; font:inherit; font-size:13px; cursor:pointer; }
+.langs button { background:none; border:1px solid rgba(255,255,255,.25); color:rgba(255,255,255,.75); border-radius:8px; padding:4px 10px; font:inherit; font-size:13px; cursor:pointer; transition:background .15s,border-color .15s,color .15s; }
 .langs button.on { background:var(--blue); border-color:var(--blue); color:#fff; }
+.langs button:hover:not(.on) { border-color:rgba(255,255,255,.5); color:#fff; }
 
-.hero { background:var(--dark); color:#fff; padding:150px 0 90px; text-align:center; }
-.hero img.lockup { width:min(480px,80vw); margin-bottom:36px; }
-.hero h1 { font-size:clamp(28px,4.5vw,48px); font-weight:800; letter-spacing:-.5px; margin-bottom:14px; }
-.hero p { font-size:clamp(15px,1.8vw,20px); color:rgba(255,255,255,.65); max-width:640px; margin:0 auto 32px; }
-.btn { display:inline-block; background:var(--blue); color:#fff; text-decoration:none; font-weight:700; padding:13px 32px; border-radius:12px; }
+@keyframes riseIn { from { opacity:0; transform:translateY(16px); } to { opacity:1; transform:translateY(0); } }
 
-section { padding:72px 0; }
-section h2 { font-size:clamp(24px,3vw,34px); font-weight:800; letter-spacing:-.5px; margin-bottom:12px; }
+/* Hero */
+.hero { background:var(--dark); color:#fff; min-height:92vh; display:flex; align-items:center; padding:120px 0 64px; overflow:hidden; }
+.hero .wrap { display:grid; grid-template-columns:minmax(300px,42%) minmax(320px,1fr); gap:32px; align-items:center; }
+.hero-text { text-align:left; animation:riseIn .7s ease both; }
+.hero h1 { font-size:clamp(30px,4.2vw,50px); font-weight:800; letter-spacing:-.5px; margin-bottom:18px; }
+.hero p { font-size:clamp(15px,1.6vw,19px); color:rgba(255,255,255,.65); max-width:520px; margin:0 0 34px; }
+.hero-actions { display:flex; flex-wrap:wrap; gap:12px; }
+.btn { display:inline-block; background:var(--blue); color:#fff; text-decoration:none; font-weight:700; padding:13px 30px; border-radius:12px; transition:transform .15s,box-shadow .15s,background .15s; }
+.btn:hover { transform:translateY(-2px); box-shadow:0 10px 24px rgba(0,101,255,.35); }
+.btn.outline { background:transparent; border:1.5px solid rgba(255,255,255,.35); color:#fff; }
+.btn.outline:hover { border-color:#fff; background:rgba(255,255,255,.08); box-shadow:none; }
+.hero-media { position:relative; min-width:55%; animation:riseIn .8s ease .1s both; }
+.hero-media::before { content:''; position:absolute; inset:-16% -10%; background:radial-gradient(circle at 62% 42%,rgba(0,101,255,.18),transparent 65%); z-index:0; pointer-events:none; }
+.hero-media img { position:relative; z-index:1; display:block; width:100%; height:auto; }
+
+section { padding:88px 0; }
+section h2 { font-size:clamp(24px,3vw,36px); font-weight:800; letter-spacing:-.5px; margin-bottom:12px; }
 .lead { color:#5a6072; max-width:720px; margin-bottom:36px; font-size:17px; }
 .tag { display:inline-block; color:var(--blue); font-weight:700; font-size:13px; letter-spacing:2px; text-transform:uppercase; margin-bottom:10px; }
 
-.cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:18px; }
-.card { border:1px solid #e4e7f0; border-radius:16px; padding:26px 24px; }
-.card .dot { width:34px; height:34px; border-radius:10px; background:var(--blue); margin-bottom:14px; position:relative; }
-.card .dot::after { content:''; position:absolute; right:-8px; top:-4px; width:7px; height:7px; background:var(--px); }
-.card h3 { font-size:17px; font-weight:800; margin-bottom:8px; }
-.card p { font-size:14px; color:#5a6072; }
+/* Services */
+.cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:24px; }
+.card { border:1px solid #e4e7f0; border-radius:18px; padding:32px; transition:transform .18s,box-shadow .18s,border-color .18s; }
+.card:hover { transform:translateY(-4px); box-shadow:0 16px 36px rgba(24,25,38,.08); border-color:#d4d9e8; }
+.card .dot { width:38px; height:38px; border-radius:11px; background:var(--blue); margin-bottom:18px; position:relative; }
+.card .dot::after { content:''; position:absolute; right:-9px; top:-5px; width:8px; height:8px; background:var(--px); }
+.card h3 { font-size:19px; font-weight:800; margin-bottom:10px; }
+.card p { font-size:14.5px; color:#5a6072; }
 
-.how { background:#f5f7fc; }
-.how .cards { grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); }
+/* Principles */
+.principles { background:#f5f7fc; }
+.principles .wrap { display:grid; grid-template-columns:1.05fr 1fr; gap:56px; align-items:start; }
+.pr-list { display:flex; flex-direction:column; gap:30px; }
+.principle { display:flex; gap:20px; }
+.principle .num { flex:0 0 auto; font-size:clamp(28px,3vw,38px); font-weight:800; color:var(--blue); line-height:1; min-width:56px; }
+.principle h3 { font-size:18px; font-weight:800; margin-bottom:6px; }
+.principle p { font-size:14.5px; color:#5a6072; max-width:440px; }
+.pr-media { position:sticky; top:96px; border-radius:24px; overflow:hidden; box-shadow:0 24px 60px rgba(24,25,38,.12); }
+.pr-media img { display:block; width:100%; height:auto; }
 
+/* About */
+.about { background:var(--dark); color:#fff; }
+.about .tag { color:var(--px); }
+.about .lead { color:rgba(255,255,255,.68); }
+.facts { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:8px; }
+.fact { background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.14); border-radius:14px; padding:20px 22px; font-weight:700; font-size:14.5px; display:flex; align-items:center; gap:12px; }
+.fact::before { content:''; flex:0 0 auto; width:8px; height:8px; border-radius:2px; background:var(--px); }
+
+/* Join */
 .join { text-align:center; }
 .join .btn { margin:6px; }
 .join .btn.tg { background:var(--dark); }
@@ -50,6 +81,16 @@ footer { background:var(--dark); color:rgba(255,255,255,.55); padding:48px 0 40p
 footer img { width:150px; display:block; margin-bottom:20px; filter:brightness(0) invert(1); opacity:.9; }
 footer a { color:rgba(255,255,255,.8); }
 footer .req { margin-top:10px; line-height:1.8; }
+
+@media (max-width:860px) {
+  .hero { min-height:auto; padding:104px 0 56px; }
+  .hero .wrap { grid-template-columns:1fr; gap:36px; }
+  .hero-text { text-align:left; }
+  .hero-media { order:2; min-width:100%; }
+  .principles .wrap { grid-template-columns:1fr; gap:36px; }
+  .pr-media { order:-1; position:static; }
+  .facts { grid-template-columns:1fr; }
+}
 </style>
 </head>
 <body>
@@ -61,36 +102,49 @@ footer .req { margin-top:10px; line-height:1.8; }
 </div></header>
 
 <section class="hero"><div class="wrap">
-  <img class="lockup" src="assets/dark-lockup.svg" alt="click dev">
-  <h1 data-i18n="hero_h">Продукты для экосистемы Click</h1>
-  <p data-i18n="hero_p">Мы разрабатываем программное обеспечение, которым удобно пользоваться: ценность — в один клик.</p>
-  <a class="btn" href="#join" data-i18n="hero_cta">Связаться</a>
+  <div class="hero-text">
+    <h1 data-i18n="hero_h">Строим цифровые продукты под ключ</h1>
+    <p data-i18n="hero_p">Платформы, приложения и AI-решения для бизнеса. Родом из экосистемы Click — с финтех-стандартами надёжности.</p>
+    <div class="hero-actions">
+      <a class="btn" href="#join" data-i18n="hero_cta">Обсудить проект</a>
+      <a class="btn outline" href="#services" data-i18n="hero_cta2">Направления</a>
+    </div>
+  </div>
+  <div class="hero-media"><img src="assets/hero-illustration.svg" alt="" width="2688" height="1536"></div>
 </div></section>
 
-<section id="about"><div class="wrap">
-  <span class="tag" data-i18n="about_tag">О компании</span>
-  <h2 data-i18n="about_h">IT-компания группы Click</h2>
-  <p class="lead" data-i18n="about_p">Click Dev — дочерняя IT-компания группы Click (Ташкент, 2026). Мы занимаемся разработкой программного обеспечения: строим и развиваем продукты экосистемы Click — от платформ до пользовательских сервисов. Резидент IT Park Uzbekistan.</p>
-</div></section>
-
-<section id="services" style="padding-top:0"><div class="wrap">
-  <span class="tag" data-i18n="do_tag">Что мы делаем</span>
-  <h2 data-i18n="do_h">Направления разработки</h2>
+<section id="services"><div class="wrap">
+  <span class="tag" data-i18n="do_tag">Услуги</span>
+  <h2 data-i18n="do_h">Что мы делаем</h2>
   <div class="cards" style="margin-top:28px">
-    <div class="card"><div class="dot"></div><h3 data-i18n="do1_h">Платформенная разработка</h3><p data-i18n="do1_p">Бек-платформы, API и интеграции, на которых работают сервисы экосистемы.</p></div>
-    <div class="card"><div class="dot"></div><h3 data-i18n="do2_h">Мини-приложения</h3><p data-i18n="do2_p">Лёгкие клиентские продукты и онбординг-сервисы внутри супераппа.</p></div>
-    <div class="card"><div class="dot"></div><h3 data-i18n="do3_h">AI-решения</h3><p data-i18n="do3_p">Агентные и ML-решения, ускоряющие бизнес-процессы и разработку.</p></div>
-    <div class="card"><div class="dot"></div><h3 data-i18n="do4_h">Сервисы идентификации</h3><p data-i18n="do4_p">Безопасный и бесшовный доступ пользователей к сервисам.</p></div>
+    <div class="card"><div class="dot"></div><h3 data-i18n="do1_h">Продукты под ключ</h3><p data-i18n="do1_p">От идеи до запуска: аналитика, дизайн, разработка, сопровождение — одна команда отвечает за результат.</p></div>
+    <div class="card"><div class="dot"></div><h3 data-i18n="do2_h">Платформы и интеграции</h3><p data-i18n="do2_p">Бек-платформы, API и высоконагруженные сервисы, которые выдерживают продовые объёмы.</p></div>
+    <div class="card"><div class="dot"></div><h3 data-i18n="do3_h">AI-решения</h3><p data-i18n="do3_p">Агентные системы и автоматизация: ускоряем процессы бизнеса и саму разработку.</p></div>
+    <div class="card"><div class="dot"></div><h3 data-i18n="do4_h">Мини-приложения</h3><p data-i18n="do4_p">Лёгкие продукты внутри супераппов и экосистем — быстрый путь к вашей аудитории.</p></div>
   </div>
 </div></section>
 
-<section class="how" id="how"><div class="wrap">
-  <span class="tag" data-i18n="how_tag">Как мы работаем</span>
-  <h2 data-i18n="how_h">Инженерно и прозрачно</h2>
-  <div class="cards" style="margin-top:28px">
-    <div class="card"><h3 data-i18n="how1_h">Прозрачные вехи</h3><p data-i18n="how1_p">Оценки, сроки и ход работ видны заказчику на каждом этапе.</p></div>
-    <div class="card"><h3 data-i18n="how2_h">Инженерная культура</h3><p data-i18n="how2_p">Код-ревью, автоматизация, ответственность за качество результата.</p></div>
-    <div class="card"><h3 data-i18n="how3_h">В контуре Click</h3><p data-i18n="how3_p">Глубокая интеграция с экосистемой и её стандартами.</p></div>
+<section class="principles" id="principles"><div class="wrap">
+  <div class="pr-list">
+    <span class="tag" data-i18n="pr_tag">Принципы</span>
+    <h2 data-i18n="pr_h" style="margin-bottom:26px">Как мы работаем</h2>
+    <div class="principle"><span class="num">01</span><div><h3 data-i18n="p1_h">Ценность в один клик</h3><p data-i18n="p1_p">Продукт обязан быть простым: пользователь получает результат с минимальными усилиями.</p></div></div>
+    <div class="principle"><span class="num">02</span><div><h3 data-i18n="p2_h">Прозрачность</h3><p data-i18n="p2_p">Вехи, оценки и статус работ видны заказчику в любой момент — без сюрпризов в конце.</p></div></div>
+    <div class="principle"><span class="num">03</span><div><h3 data-i18n="p3_h">Инженерная культура</h3><p data-i18n="p3_p">Код-ревью, автоматизация, тесты: качество встроено в процесс, а не проверяется в конце.</p></div></div>
+    <div class="principle"><span class="num">04</span><div><h3 data-i18n="p4_h">AI-ускорение</h3><p data-i18n="p4_p">Агентная разработка позволяет нам двигаться быстрее рынка — не жертвуя качеством.</p></div></div>
+    <div class="principle"><span class="num">05</span><div><h3 data-i18n="p5_h">Стандарты экосистемы Click</h3><p data-i18n="p5_p">Мы выросли в финтехе: надёжность, безопасность и масштаб — наша норма по умолчанию.</p></div></div>
+  </div>
+  <div class="pr-media"><img src="assets/principles-illustration.svg" alt="" width="2048" height="2048"></div>
+</div></section>
+
+<section class="about" id="about"><div class="wrap">
+  <span class="tag" data-i18n="about_tag">О компании</span>
+  <h2 data-i18n="about_h">Родом из экосистемы Click</h2>
+  <p class="lead" data-i18n="about_p">Click Dev — IT-компания группы Click. Мы строим продукты экосистемы Click и берём внешние проекты, которым нужны финтех-уровень надёжности и высокая скорость разработки.</p>
+  <div class="facts">
+    <div class="fact" data-i18n="fact1">Группа Click</div>
+    <div class="fact" data-i18n="fact2">Резидент IT Park Uzbekistan</div>
+    <div class="fact" data-i18n="fact3">Ташкент · 2026</div>
   </div>
 </div></section>
 
@@ -115,47 +169,56 @@ footer .req { margin-top:10px; line-height:1.8; }
 <script>
 const I18N = {
  ru: {
-  hero_h:"Продукты для экосистемы Click", hero_p:"Мы разрабатываем программное обеспечение, которым удобно пользоваться: ценность — в один клик.", hero_cta:"Связаться",
-  about_tag:"О компании", about_h:"IT-компания группы Click", about_p:"Click Dev — дочерняя IT-компания группы Click (Ташкент, 2026). Мы занимаемся разработкой программного обеспечения: строим и развиваем продукты экосистемы Click — от платформ до пользовательских сервисов. Резидент IT Park Uzbekistan.",
-  do_tag:"Что мы делаем", do_h:"Направления разработки",
-  do1_h:"Платформенная разработка", do1_p:"Бек-платформы, API и интеграции, на которых работают сервисы экосистемы.",
-  do2_h:"Мини-приложения", do2_p:"Лёгкие клиентские продукты и онбординг-сервисы внутри супераппа.",
-  do3_h:"AI-решения", do3_p:"Агентные и ML-решения, ускоряющие бизнес-процессы и разработку.",
-  do4_h:"Сервисы идентификации", do4_p:"Безопасный и бесшовный доступ пользователей к сервисам.",
-  how_tag:"Как мы работаем", how_h:"Инженерно и прозрачно",
-  how1_h:"Прозрачные вехи", how1_p:"Оценки, сроки и ход работ видны заказчику на каждом этапе.",
-  how2_h:"Инженерная культура", how2_p:"Код-ревью, автоматизация, ответственность за качество результата.",
-  how3_h:"В контуре Click", how3_p:"Глубокая интеграция с экосистемой и её стандартами.",
+  hero_h:"Строим цифровые продукты под ключ", hero_p:"Платформы, приложения и AI-решения для бизнеса. Родом из экосистемы Click — с финтех-стандартами надёжности.", hero_cta:"Обсудить проект", hero_cta2:"Направления",
+  do_tag:"Услуги", do_h:"Что мы делаем",
+  do1_h:"Продукты под ключ", do1_p:"От идеи до запуска: аналитика, дизайн, разработка, сопровождение — одна команда отвечает за результат.",
+  do2_h:"Платформы и интеграции", do2_p:"Бек-платформы, API и высоконагруженные сервисы, которые выдерживают продовые объёмы.",
+  do3_h:"AI-решения", do3_p:"Агентные системы и автоматизация: ускоряем процессы бизнеса и саму разработку.",
+  do4_h:"Мини-приложения", do4_p:"Лёгкие продукты внутри супераппов и экосистем — быстрый путь к вашей аудитории.",
+  pr_tag:"Принципы", pr_h:"Как мы работаем",
+  p1_h:"Ценность в один клик", p1_p:"Продукт обязан быть простым: пользователь получает результат с минимальными усилиями.",
+  p2_h:"Прозрачность", p2_p:"Вехи, оценки и статус работ видны заказчику в любой момент — без сюрпризов в конце.",
+  p3_h:"Инженерная культура", p3_p:"Код-ревью, автоматизация, тесты: качество встроено в процесс, а не проверяется в конце.",
+  p4_h:"AI-ускорение", p4_p:"Агентная разработка позволяет нам двигаться быстрее рынка — не жертвуя качеством.",
+  p5_h:"Стандарты экосистемы Click", p5_p:"Мы выросли в финтехе: надёжность, безопасность и масштаб — наша норма по умолчанию.",
+  about_tag:"О компании", about_h:"Родом из экосистемы Click", about_p:"Click Dev — IT-компания группы Click. Мы строим продукты экосистемы Click и берём внешние проекты, которым нужны финтех-уровень надёжности и высокая скорость разработки.",
+  fact1:"Группа Click", fact2:"Резидент IT Park Uzbekistan", fact3:"Ташкент · 2026",
   join_tag:"Команда", join_h:"Мы растём", join_p:"Если вам близко то, что мы делаем, — напишите нам. Расскажите о себе и о том, что вам интересно строить.",
   f_name:"ООО «CLICK DEV»", f_inn:"ИНН 313100113", f_addr:"Ташкент, Darxon MFY, ул. Salor bo'yi, 35-а", f_res:"Резидент IT Park Uzbekistan", f_c:"© 2026 Click Dev — часть экосистемы Click"
  },
  uz: {
-  hero_h:"Click ekotizimi uchun mahsulotlar", hero_p:"Biz foydalanish qulay bo'lgan dasturiy ta'minot yaratamiz: qiymat — bir klikda.", hero_cta:"Bog'lanish",
-  about_tag:"Kompaniya haqida", about_h:"Click guruhining IT-kompaniyasi", about_p:"Click Dev — Click guruhining sho''ba IT-kompaniyasi (Toshkent, 2026). Biz dasturiy ta'minot ishlab chiqish bilan shug'ullanamiz: Click ekotizimi mahsulotlarini yaratamiz va rivojlantiramiz. IT Park Uzbekistan rezidenti.",
-  do_tag:"Nima qilamiz", do_h:"Ishlab chiqish yo'nalishlari",
-  do1_h:"Platforma ishlab chiqish", do1_p:"Ekotizim xizmatlari ishlaydigan bek-platformalar, API va integratsiyalar.",
-  do2_h:"Mini-ilovalar", do2_p:"Superapp ichidagi yengil mijoz mahsulotlari va onboarding xizmatlari.",
-  do3_h:"AI-yechimlar", do3_p:"Biznes-jarayonlar va dasturlashni tezlashtiruvchi agentli va ML-yechimlar.",
-  do4_h:"Identifikatsiya xizmatlari", do4_p:"Foydalanuvchilarning xizmatlarga xavfsiz va uzluksiz kirishi.",
-  how_tag:"Qanday ishlaymiz", how_h:"Muhandislik va shaffoflik",
-  how1_h:"Shaffof bosqichlar", how1_p:"Baholash, muddatlar va ish jarayoni har bosqichda buyurtmachiga ko'rinadi.",
-  how2_h:"Muhandislik madaniyati", how2_p:"Kod-revyu, avtomatlashtirish, natija sifati uchun mas'uliyat.",
-  how3_h:"Click konturida", how3_p:"Ekotizim va uning standartlari bilan chuqur integratsiya.",
+  hero_h:"Raqamli mahsulotlarni to'liq tsiklda quramiz", hero_p:"Biznes uchun platformalar, ilovalar va AI-yechimlar. Click ekotizimidan chiqqanmiz — fintex darajasidagi ishonchlilik bilan.", hero_cta:"Loyihani muhokama qilish", hero_cta2:"Yo'nalishlar",
+  do_tag:"Xizmatlar", do_h:"Nima qilamiz",
+  do1_h:"Tayyor mahsulotlar", do1_p:"G'oyadan ishga tushirishgacha: tahlil, dizayn, dasturlash, qo'llab-quvvatlash — natija uchun bitta jamoa javob beradi.",
+  do2_h:"Platformalar va integratsiyalar", do2_p:"Prod hajmlariga bardosh beradigan bek-platformalar, API va yuqori yuklamali xizmatlar.",
+  do3_h:"AI-yechimlar", do3_p:"Agentli tizimlar va avtomatlashtirish: biznes jarayonlarini ham, dasturlashning o'zini ham tezlashtiramiz.",
+  do4_h:"Mini-ilovalar", do4_p:"Superapp va ekotizimlar ichidagi yengil mahsulotlar — auditoriyangizga tez yo'l.",
+  pr_tag:"Tamoyillar", pr_h:"Qanday ishlaymiz",
+  p1_h:"Bir klikdagi qiymat", p1_p:"Mahsulot sodda bo'lishi shart: foydalanuvchi natijani minimal harakat bilan oladi.",
+  p2_h:"Shaffoflik", p2_p:"Bosqichlar, baholar va ish holati buyurtmachiga istalgan payt ko'rinadi — oxirida syurprizlarsiz.",
+  p3_h:"Muhandislik madaniyati", p3_p:"Kod-revyu, avtomatlashtirish, testlar: sifat jarayonga o'rnatilgan, oxirida tekshirilmaydi.",
+  p4_h:"AI-tezlashtirish", p4_p:"Agentli dasturlash bizga bozordan tezroq harakatlanish imkonini beradi — sifatni yo'qotmasdan.",
+  p5_h:"Click ekotizimi standartlari", p5_p:"Biz fintexda ulg'ayganmiz: ishonchlilik, xavfsizlik va masshtab — bizning odatiy normamiz.",
+  about_tag:"Kompaniya haqida", about_h:"Click ekotizimidan chiqqanmiz", about_p:"Click Dev — Click guruhining IT-kompaniyasi. Biz Click ekotizimi mahsulotlarini quramiz hamda fintex darajasidagi ishonchlilik va yuqori tezlik kerak bo'lgan tashqi loyihalarni olamiz.",
+  fact1:"Click guruhi", fact2:"IT Park Uzbekistan rezidenti", fact3:"Toshkent · 2026",
   join_tag:"Jamoa", join_h:"Biz o'smoqdamiz", join_p:"Agar biz qilayotgan ish sizga yaqin bo'lsa — bizga yozing. O'zingiz va nimani qurish qiziq ekani haqida so'zlab bering.",
   f_name:"«CLICK DEV» MChJ", f_inn:"STIR 313100113", f_addr:"Toshkent, Darxon MFY, Salor bo'yi ko'chasi, 35-a", f_res:"IT Park Uzbekistan rezidenti", f_c:"© 2026 Click Dev — Click ekotizimining bir qismi"
  },
  en: {
-  hero_h:"Products for the Click ecosystem", hero_p:"We build software that's effortless to use: value in one click.", hero_cta:"Get in touch",
-  about_tag:"About", about_h:"An IT company of the Click group", about_p:"Click Dev is a subsidiary IT company of the Click group (Tashkent, 2026). We do software development: building and evolving products of the Click ecosystem — from platforms to consumer services. Resident of IT Park Uzbekistan.",
-  do_tag:"What we do", do_h:"Development areas",
-  do1_h:"Platform engineering", do1_p:"Backend platforms, APIs and integrations powering the ecosystem's services.",
-  do2_h:"Mini apps", do2_p:"Lightweight consumer products and onboarding services inside the super app.",
-  do3_h:"AI solutions", do3_p:"Agentic and ML solutions accelerating business processes and development.",
-  do4_h:"Identity services", do4_p:"Secure, seamless user access to services.",
-  how_tag:"How we work", how_h:"Engineered and transparent",
-  how1_h:"Transparent milestones", how1_p:"Estimates, timelines and progress visible to the customer at every stage.",
-  how2_h:"Engineering culture", how2_p:"Code review, automation, ownership of quality.",
-  how3_h:"Inside the Click ecosystem", how3_p:"Deep integration with the ecosystem and its standards.",
+  hero_h:"We build digital products end-to-end", hero_p:"Platforms, apps and AI solutions for business. Born in the Click ecosystem — with fintech-grade reliability.", hero_cta:"Discuss a project", hero_cta2:"What we do",
+  do_tag:"Services", do_h:"What we do",
+  do1_h:"End-to-end products", do1_p:"From idea to launch: discovery, design, development, support — one team owns the outcome.",
+  do2_h:"Platforms & integrations", do2_p:"Backend platforms, APIs and high-load services that hold production volumes.",
+  do3_h:"AI solutions", do3_p:"Agentic systems and automation: we speed up business processes and development itself.",
+  do4_h:"Mini apps", do4_p:"Lightweight products inside super apps and ecosystems — a fast route to your audience.",
+  pr_tag:"Principles", pr_h:"How we work",
+  p1_h:"Value in one click", p1_p:"A product must be simple: the user gets the result with minimal effort.",
+  p2_h:"Transparency", p2_p:"Milestones, estimates and status are visible to the customer at any moment — no surprises at the end.",
+  p3_h:"Engineering culture", p3_p:"Code review, automation, tests: quality is built into the process, not inspected at the end.",
+  p4_h:"AI acceleration", p4_p:"Agentic development lets us move faster than the market — without trading away quality.",
+  p5_h:"Click ecosystem standards", p5_p:"We grew up in fintech: reliability, security and scale are our default.",
+  about_tag:"About", about_h:"Born in the Click ecosystem", about_p:"Click Dev is an IT company of the Click group. We build products of the Click ecosystem and take on external projects that need fintech-grade reliability and high development speed.",
+  fact1:"Click group", fact2:"Resident of IT Park Uzbekistan", fact3:"Tashkent · 2026",
   join_tag:"Team", join_h:"We're growing", join_p:"If what we do resonates with you — write to us. Tell us about yourself and what you'd love to build.",
   f_name:"CLICK DEV LLC", f_inn:"TIN 313100113", f_addr:"Tashkent, Darxon MFY, Salor bo'yi st., 35a", f_res:"Resident of IT Park Uzbekistan", f_c:"© 2026 Click Dev — part of the Click ecosystem"
  }
