@@ -113,5 +113,63 @@ footer .req { margin-top:10px; line-height:1.8; }
     <span data-i18n="f_c">© 2026 Click Dev — часть экосистемы Click</span>
   </div>
 </div></footer>
+<script>
+const I18N = {
+ ru: {
+  hero_h:"Продукты для экосистемы Click", hero_p:"Мы разрабатываем программное обеспечение, которым удобно пользоваться: ценность — в один клик.", hero_cta:"Связаться",
+  about_tag:"О компании", about_h:"IT-компания группы Click", about_p:"Click Dev — дочерняя IT-компания группы Click (Ташкент, 2026). Мы занимаемся разработкой программного обеспечения: строим и развиваем продукты экосистемы Click — от платформ до пользовательских сервисов. Резидент IT Park Uzbekistan.",
+  do_tag:"Что мы делаем", do_h:"Направления разработки",
+  do1_h:"Платформенная разработка", do1_p:"Бек-платформы, API и интеграции, на которых работают сервисы экосистемы.",
+  do2_h:"Мини-приложения", do2_p:"Лёгкие клиентские продукты и онбординг-сервисы внутри супераппа.",
+  do3_h:"AI-решения", do3_p:"Агентные и ML-решения, ускоряющие бизнес-процессы и разработку.",
+  do4_h:"Сервисы идентификации", do4_p:"Безопасный и бесшовный доступ пользователей к сервисам.",
+  how_tag:"Как мы работаем", how_h:"Инженерно и прозрачно",
+  how1_h:"Прозрачные вехи", how1_p:"Оценки, сроки и ход работ видны заказчику на каждом этапе.",
+  how2_h:"Инженерная культура", how2_p:"Код-ревью, автоматизация, ответственность за качество результата.",
+  how3_h:"В контуре Click", how3_p:"Глубокая интеграция с экосистемой и её стандартами.",
+  join_tag:"Команда", join_h:"Мы растём", join_p:"Если вам близко то, что мы делаем, — напишите нам. Расскажите о себе и о том, что вам интересно строить.",
+  f_name:"ООО «CLICK DEV»", f_inn:"ИНН 313100113", f_addr:"Ташкент, Darxon MFY, ул. Salor bo'yi, 35-а", f_res:"Резидент IT Park Uzbekistan", f_c:"© 2026 Click Dev — часть экосистемы Click"
+ },
+ uz: {
+  hero_h:"Click ekotizimi uchun mahsulotlar", hero_p:"Biz foydalanish qulay bo'lgan dasturiy ta'minot yaratamiz: qiymat — bir klikda.", hero_cta:"Bog'lanish",
+  about_tag:"Kompaniya haqida", about_h:"Click guruhining IT-kompaniyasi", about_p:"Click Dev — Click guruhining sho''ba IT-kompaniyasi (Toshkent, 2026). Biz dasturiy ta'minot ishlab chiqish bilan shug'ullanamiz: Click ekotizimi mahsulotlarini yaratamiz va rivojlantiramiz. IT Park Uzbekistan rezidenti.",
+  do_tag:"Nima qilamiz", do_h:"Ishlab chiqish yo'nalishlari",
+  do1_h:"Platforma ishlab chiqish", do1_p:"Ekotizim xizmatlari ishlaydigan bek-platformalar, API va integratsiyalar.",
+  do2_h:"Mini-ilovalar", do2_p:"Superapp ichidagi yengil mijoz mahsulotlari va onboarding xizmatlari.",
+  do3_h:"AI-yechimlar", do3_p:"Biznes-jarayonlar va dasturlashni tezlashtiruvchi agentli va ML-yechimlar.",
+  do4_h:"Identifikatsiya xizmatlari", do4_p:"Foydalanuvchilarning xizmatlarga xavfsiz va uzluksiz kirishi.",
+  how_tag:"Qanday ishlaymiz", how_h:"Muhandislik va shaffoflik",
+  how1_h:"Shaffof bosqichlar", how1_p:"Baholash, muddatlar va ish jarayoni har bosqichda buyurtmachiga ko'rinadi.",
+  how2_h:"Muhandislik madaniyati", how2_p:"Kod-revyu, avtomatlashtirish, natija sifati uchun mas'uliyat.",
+  how3_h:"Click konturida", how3_p:"Ekotizim va uning standartlari bilan chuqur integratsiya.",
+  join_tag:"Jamoa", join_h:"Biz o'symoqdamiz", join_p:"Agar biz qilayotgan ish sizga yaqin bo'lsa — bizga yozing. O'zingiz va nimani qurish qiziq ekani haqida so'zlab bering.",
+  f_name:"«CLICK DEV» MChJ", f_inn:"STIR 313100113", f_addr:"Toshkent, Darxon MFY, Salor bo'yi ko'chasi, 35-a", f_res:"IT Park Uzbekistan rezidenti", f_c:"© 2026 Click Dev — Click ekotizimining bir qismi"
+ },
+ en: {
+  hero_h:"Products for the Click ecosystem", hero_p:"We build software that's effortless to use: value in one click.", hero_cta:"Get in touch",
+  about_tag:"About", about_h:"An IT company of the Click group", about_p:"Click Dev is a subsidiary IT company of the Click group (Tashkent, 2026). We do software development: building and evolving products of the Click ecosystem — from platforms to consumer services. Resident of IT Park Uzbekistan.",
+  do_tag:"What we do", do_h:"Development areas",
+  do1_h:"Platform engineering", do1_p:"Backend platforms, APIs and integrations powering the ecosystem's services.",
+  do2_h:"Mini apps", do2_p:"Lightweight consumer products and onboarding services inside the super app.",
+  do3_h:"AI solutions", do3_p:"Agentic and ML solutions accelerating business processes and development.",
+  do4_h:"Identity services", do4_p:"Secure, seamless user access to services.",
+  how_tag:"How we work", how_h:"Engineered and transparent",
+  how1_h:"Transparent milestones", how1_p:"Estimates, timelines and progress visible to the customer at every stage.",
+  how2_h:"Engineering culture", how2_p:"Code review, automation, ownership of quality.",
+  how3_h:"Inside the Click ecosystem", how3_p:"Deep integration with the ecosystem and its standards.",
+  join_tag:"Team", join_h:"We're growing", join_p:"If what we do resonates with you — write to us. Tell us about yourself and what you'd love to build.",
+  f_name:"CLICK DEV LLC", f_inn:"TIN 313100113", f_addr:"Tashkent, Darxon MFY, Salor bo'yi st., 35a", f_res:"Resident of IT Park Uzbekistan", f_c:"© 2026 Click Dev — part of the Click ecosystem"
+ }
+};
+function setLang(code){
+  const d = I18N[code] || I18N.ru;
+  document.querySelectorAll('[data-i18n]').forEach(el => { const k = el.dataset.i18n; if (d[k]) el.textContent = d[k]; });
+  document.documentElement.lang = code;
+  document.querySelectorAll('.langs button').forEach(b => b.classList.toggle('on', b.dataset.lang === code));
+  localStorage.setItem('lang', code);
+}
+document.querySelectorAll('.langs button').forEach(b => b.addEventListener('click', () => setLang(b.dataset.lang)));
+setLang(localStorage.getItem('lang') || 'ru');
+</script>
 </body>
 </html>
