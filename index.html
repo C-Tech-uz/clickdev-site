@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Click Dev — разработка продуктов экосистемы Click</title>
+<meta name="description" content="Click Dev — IT-компания группы Click. Разработка программного обеспечения: платформы, мини-приложения, AI-решения. Резидент IT Park Uzbekistan.">
+<link rel="icon" type="image/svg+xml" href="assets/mark.svg">
+<style>
+:root { --blue:#0065FF; --dark:#181926; --px:#397FE6; }
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { font-family:ui-rounded,-apple-system,'Segoe UI',Roboto,sans-serif; color:#1a2033; background:#fff; line-height:1.6; }
+.wrap { max-width:1080px; margin:0 auto; padding:0 24px; }
+
+header { position:fixed; top:0; left:0; right:0; z-index:10; background:rgba(24,25,38,.92); backdrop-filter:blur(8px); }
+header .wrap { display:flex; align-items:center; justify-content:space-between; height:60px; }
+.brand { display:flex; align-items:center; gap:10px; color:#fff; font-weight:800; font-size:18px; text-decoration:none; }
+.brand img { width:30px; height:30px; border-radius:8px; background:#fff; padding:2px; }
+.langs { display:flex; gap:4px; }
+.langs button { background:none; border:1px solid rgba(255,255,255,.25); color:rgba(255,255,255,.75); border-radius:8px; padding:4px 10px; font:inherit; font-size:13px; cursor:pointer; }
+.langs button.on { background:var(--blue); border-color:var(--blue); color:#fff; }
+
+.hero { background:var(--dark); color:#fff; padding:150px 0 90px; text-align:center; }
+.hero img.lockup { width:min(480px,80vw); margin-bottom:36px; }
+.hero h1 { font-size:clamp(28px,4.5vw,48px); font-weight:800; letter-spacing:-.5px; margin-bottom:14px; }
+.hero p { font-size:clamp(15px,1.8vw,20px); color:rgba(255,255,255,.65); max-width:640px; margin:0 auto 32px; }
+.btn { display:inline-block; background:var(--blue); color:#fff; text-decoration:none; font-weight:700; padding:13px 32px; border-radius:12px; }
+.btn.ghost { background:none; border:1px solid rgba(255,255,255,.3); margin-left:10px; }
+
+section { padding:72px 0; }
+section h2 { font-size:clamp(24px,3vw,34px); font-weight:800; letter-spacing:-.5px; margin-bottom:12px; }
+.lead { color:#5a6072; max-width:720px; margin-bottom:36px; font-size:17px; }
+.tag { display:inline-block; color:var(--blue); font-weight:700; font-size:13px; letter-spacing:2px; text-transform:uppercase; margin-bottom:10px; }
+
+.cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:18px; }
+.card { border:1px solid #e4e7f0; border-radius:16px; padding:26px 24px; }
+.card .dot { width:34px; height:34px; border-radius:10px; background:var(--blue); margin-bottom:14px; position:relative; }
+.card .dot::after { content:''; position:absolute; right:-8px; top:-4px; width:7px; height:7px; background:var(--px); }
+.card h3 { font-size:17px; font-weight:800; margin-bottom:8px; }
+.card p { font-size:14px; color:#5a6072; }
+
+.how { background:#f5f7fc; }
+.how .cards { grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); }
+
+.join { text-align:center; }
+.join .btn { margin:6px; }
+.join .btn.tg { background:var(--dark); }
+
+footer { background:var(--dark); color:rgba(255,255,255,.55); padding:48px 0 40px; font-size:13.5px; }
+footer img { width:150px; display:block; margin-bottom:20px; background:#fff; padding:10px 14px; border-radius:10px; }
+footer a { color:rgba(255,255,255,.8); }
+footer .req { margin-top:10px; line-height:1.8; }
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <a class="brand" href="#"><img src="assets/mark.svg" alt="Click Dev"><span>click dev</span></a>
+  <nav class="langs">
+    <button data-lang="uz">UZ</button><button data-lang="ru" class="on">РУ</button><button data-lang="en">EN</button>
+  </nav>
+</div></header>
+
+<section class="hero"><div class="wrap">
+  <img class="lockup" src="assets/dark-lockup.svg" alt="click dev">
+  <h1 data-i18n="hero_h">Продукты для экосистемы Click</h1>
+  <p data-i18n="hero_p">Мы разрабатываем программное обеспечение, которым удобно пользоваться: ценность — в один клик.</p>
+  <a class="btn" href="#join" data-i18n="hero_cta">Связаться</a>
+</div></section>
+
+<section id="about"><div class="wrap">
+  <span class="tag" data-i18n="about_tag">О компании</span>
+  <h2 data-i18n="about_h">IT-компания группы Click</h2>
+  <p class="lead" data-i18n="about_p">Click Dev — дочерняя IT-компания группы Click (Ташкент, 2026). Мы занимаемся разработкой программного обеспечения: строим и развиваем продукты экосистемы Click — от платформ до пользовательских сервисов. Резидент IT Park Uzbekistan.</p>
+</div></section>
+
+<section id="services" style="padding-top:0"><div class="wrap">
+  <span class="tag" data-i18n="do_tag">Что мы делаем</span>
+  <h2 data-i18n="do_h">Направления разработки</h2>
+  <div class="cards" style="margin-top:28px">
+    <div class="card"><div class="dot"></div><h3 data-i18n="do1_h">Платформенная разработка</h3><p data-i18n="do1_p">Бек-платформы, API и интеграции, на которых работают сервисы экосистемы.</p></div>
+    <div class="card"><div class="dot"></div><h3 data-i18n="do2_h">Мини-приложения</h3><p data-i18n="do2_p">Лёгкие клиентские продукты и онбординг-сервисы внутри супераппа.</p></div>
+    <div class="card"><div class="dot"></div><h3 data-i18n="do3_h">AI-решения</h3><p data-i18n="do3_p">Агентные и ML-решения, ускоряющие бизнес-процессы и разработку.</p></div>
+    <div class="card"><div class="dot"></div><h3 data-i18n="do4_h">Сервисы идентификации</h3><p data-i18n="do4_p">Безопасный и бесшовный доступ пользователей к сервисам.</p></div>
+  </div>
+</div></section>
+
+<section class="how" id="how"><div class="wrap">
+  <span class="tag" data-i18n="how_tag">Как мы работаем</span>
+  <h2 data-i18n="how_h">Инженерно и прозрачно</h2>
+  <div class="cards" style="margin-top:28px">
+    <div class="card"><h3 data-i18n="how1_h">Прозрачные вехи</h3><p data-i18n="how1_p">Оценки, сроки и ход работ видны заказчику на каждом этапе.</p></div>
+    <div class="card"><h3 data-i18n="how2_h">Инженерная культура</h3><p data-i18n="how2_p">Код-ревью, автоматизация, ответственность за качество результата.</p></div>
+    <div class="card"><h3 data-i18n="how3_h">В контуре Click</h3><p data-i18n="how3_p">Глубокая интеграция с экосистемой и её стандартами.</p></div>
+  </div>
+</div></section>
+
+<section class="join" id="join"><div class="wrap">
+  <span class="tag" data-i18n="join_tag">Команда</span>
+  <h2 data-i18n="join_h">Мы растём</h2>
+  <p class="lead" style="margin:0 auto 28px" data-i18n="join_p">Если вам близко то, что мы делаем, — напишите нам. Расскажите о себе и о том, что вам интересно строить.</p>
+  <a class="btn" href="mailto:hello@clickdev.uz">hello@clickdev.uz</a>
+  <a class="btn tg" href="https://t.me/Aleksei_Shatilov">Telegram</a>
+</div></section>
+
+<footer id="contacts"><div class="wrap">
+  <img src="assets/light-wordmark.svg" alt="click dev">
+  <div><a href="mailto:hello@clickdev.uz">hello@clickdev.uz</a> · <a href="https://t.me/Aleksei_Shatilov">t.me/Aleksei_Shatilov</a></div>
+  <div class="req">
+    <span data-i18n="f_name">ООО «CLICK DEV»</span> · <span data-i18n="f_inn">ИНН 313100113</span><br>
+    <span data-i18n="f_addr">Ташкент, Darxon MFY, ул. Salor bo'yi, 35-а</span><br>
+    <span data-i18n="f_res">Резидент IT Park Uzbekistan</span><br>
+    <span data-i18n="f_c">© 2026 Click Dev — часть экосистемы Click</span>
+  </div>
+</div></footer>
+</body>
+</html>
