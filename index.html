@@ -67,14 +67,18 @@ section h2 { font-size:clamp(24px,3vw,36px); font-weight:800; letter-spacing:-.5
 .services .tag { color:var(--px); }
 .services h2 { color:#fff; }
 .services-head { position:relative; z-index:1; }
-.prod-block { min-height:70vh; display:flex; align-items:center; padding:48px 0; }
-.prod-grid { display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center; }
+.prod-block { min-height:52vh; display:flex; align-items:center; padding:40px 0; }
+.prod-grid { display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:center; }
+.prod-text { position:relative; z-index:1; }
 .prod-num { display:block; font-size:15px; font-weight:800; letter-spacing:3px; color:var(--px); margin-bottom:14px; }
+.prod-chips { display:flex; flex-wrap:wrap; gap:10px; margin-top:22px; }
+.prod-chips span { border:1px solid rgba(0,101,255,.35); background:rgba(0,101,255,.08); color:rgba(255,255,255,.8); border-radius:999px; padding:7px 16px; font-size:13.5px; }
+.prod-ghost { position:absolute; top:-40px; left:-14px; font-size:clamp(120px,16vw,220px); font-weight:800; color:rgba(255,255,255,.045); line-height:1; z-index:0; pointer-events:none; }
 .prod-text h3 { font-size:clamp(24px,3vw,40px); font-weight:800; letter-spacing:-.5px; margin-bottom:16px; }
 .prod-text p { font-size:16px; color:rgba(255,255,255,.62); max-width:460px; }
 .prod-media { position:relative; }
 .prod-media img { position:relative; z-index:1; display:block; width:100%; height:auto; }
-.prod-block.rev .prod-text { order:2; }
+.prod-block.rev .prod-text { position:relative; order:2; }
 .prod-block.rev .prod-media { order:1; }
 
 /* Principles */
@@ -160,28 +164,32 @@ footer .req { margin-top:10px; line-height:1.8; }
 
   <div class="prod-block">
     <div class="wrap prod-grid">
-      <div class="prod-text"><span class="prod-num">01</span><h3 data-i18n="do1_h">Продукты под ключ</h3><p data-i18n="do1_p">От идеи до запуска: аналитика, дизайн, разработка, сопровождение — одна команда отвечает за результат.</p></div>
+      <div class="prod-text"><div class="prod-ghost">01</div><span class="prod-num">01</span><h3 data-i18n="do1_h">Продукты под ключ</h3><p data-i18n="do1_p">От идеи до запуска: аналитика, дизайн, разработка, сопровождение — одна команда отвечает за результат.</p>
+      <div class="prod-chips"><span data-i18n="svc1a">Аналитика и дизайн</span><span data-i18n="svc1b">Разработка</span><span data-i18n="svc1c">Сопровождение</span></div></div>
       <div class="prod-media"><img src="assets/svc-products.webp" alt="" width="2048" height="2048"></div>
     </div>
   </div>
 
   <div class="prod-block rev">
     <div class="wrap prod-grid">
-      <div class="prod-text"><span class="prod-num">02</span><h3 data-i18n="do2_h">Платформы и интеграции</h3><p data-i18n="do2_p">Бек-платформы, API и высоконагруженные сервисы, которые выдерживают продовые объёмы.</p></div>
+      <div class="prod-text"><div class="prod-ghost">02</div><span class="prod-num">02</span><h3 data-i18n="do2_h">Платформы и интеграции</h3><p data-i18n="do2_p">Бек-платформы, API и высоконагруженные сервисы, которые выдерживают продовые объёмы.</p>
+      <div class="prod-chips"><span data-i18n="svc2a">API и интеграции</span><span data-i18n="svc2b">Высокие нагрузки</span><span data-i18n="svc2c">Отказоустойчивость</span></div></div>
       <div class="prod-media"><img src="assets/svc-platforms.webp" alt="" width="2048" height="2048"></div>
     </div>
   </div>
 
   <div class="prod-block">
     <div class="wrap prod-grid">
-      <div class="prod-text"><span class="prod-num">03</span><h3 data-i18n="do3_h">AI-решения</h3><p data-i18n="do3_p">Агентные системы и автоматизация: ускоряем процессы бизнеса и саму разработку.</p></div>
+      <div class="prod-text"><div class="prod-ghost">03</div><span class="prod-num">03</span><h3 data-i18n="do3_h">AI-решения</h3><p data-i18n="do3_p">Агентные системы и автоматизация: ускоряем процессы бизнеса и саму разработку.</p>
+      <div class="prod-chips"><span data-i18n="svc3a">Агентные системы</span><span data-i18n="svc3b">Автоматизация процессов</span><span data-i18n="svc3c">AI в разработке</span></div></div>
       <div class="prod-media"><img src="assets/cleo-console.webp" alt="" width="930" height="512"></div>
     </div>
   </div>
 
   <div class="prod-block rev">
     <div class="wrap prod-grid">
-      <div class="prod-text"><span class="prod-num">04</span><h3 data-i18n="do4_h">Мини-приложения</h3><p data-i18n="do4_p">Лёгкие продукты внутри супераппов и экосистем — быстрый путь к вашей аудитории.</p></div>
+      <div class="prod-text"><div class="prod-ghost">04</div><span class="prod-num">04</span><h3 data-i18n="do4_h">Мини-приложения</h3><p data-i18n="do4_p">Лёгкие продукты внутри супераппов и экосистем — быстрый путь к вашей аудитории.</p>
+      <div class="prod-chips"><span data-i18n="svc4a">Суперапп-платформы</span><span data-i18n="svc4b">Быстрый запуск</span><span data-i18n="svc4c">Онбординг пользователей</span></div></div>
       <div class="prod-media"><img src="assets/svc-miniapps.webp" alt="" width="2048" height="2048"></div>
     </div>
   </div>
@@ -254,6 +262,7 @@ const I18N = {
   p5_h:"Стандарты экосистемы Click", p5_p:"Мы выросли в финтехе: надёжность, безопасность и масштаб — наша норма по умолчанию.",
   about_tag:"О компании", about_h:"Родом из экосистемы Click", about_p:"Click Dev — IT-компания группы Click. Мы строим продукты экосистемы Click и берём внешние проекты, которым нужны финтех-уровень надёжности и высокая скорость разработки.",
   bignum_t:"пользователей у экосистемы Click — наши продукты работают в этом масштабе",
+  svc1a:"Аналитика и дизайн", svc1b:"Разработка", svc1c:"Сопровождение", svc2a:"API и интеграции", svc2b:"Высокие нагрузки", svc2c:"Отказоустойчивость", svc3a:"Агентные системы", svc3b:"Автоматизация процессов", svc3c:"AI в разработке", svc4a:"Суперапп-платформы", svc4b:"Быстрый запуск", svc4c:"Онбординг пользователей",
   fact1:"Группа Click", fact2:"Резидент IT Park Uzbekistan", fact3:"Ташкент · 2026",
   join_tag:"Команда", join_h:"Мы растём", join_p:"Если вам близко то, что мы делаем, — напишите нам. Расскажите о себе и о том, что вам интересно строить.",
   f_name:"ООО «CLICK DEV»", f_inn:"ИНН 313100113", f_addr:"Ташкент, Darxon MFY, ул. Salor bo'yi, 35-а", f_res:"Резидент IT Park Uzbekistan", f_c:"© 2026 Click Dev — часть экосистемы Click"
@@ -273,6 +282,7 @@ const I18N = {
   p5_h:"Click ekotizimi standartlari", p5_p:"Biz fintexda ulg'ayganmiz: ishonchlilik, xavfsizlik va masshtab — bizning odatiy normamiz.",
   about_tag:"Kompaniya haqida", about_h:"Click ekotizimidan chiqqanmiz", about_p:"Click Dev — Click guruhining IT-kompaniyasi. Biz Click ekotizimi mahsulotlarini quramiz hamda fintex darajasidagi ishonchlilik va yuqori tezlik kerak bo'lgan tashqi loyihalarni olamiz.",
   bignum_t:"Click ekotizimi foydalanuvchilari — mahsulotlarimiz shu masshtabda ishlaydi",
+  svc1a:"Tahlil va dizayn", svc1b:"Dasturlash", svc1c:"Qo'llab-quvvatlash", svc2a:"API va integratsiyalar", svc2b:"Yuqori yuklamalar", svc2c:"Nosozlikka bardoshlilik", svc3a:"Agentli tizimlar", svc3b:"Jarayonlarni avtomatlashtirish", svc3c:"Dasturlashda AI", svc4a:"Superapp platformalari", svc4b:"Tez ishga tushirish", svc4c:"Foydalanuvchi onboardingi",
   fact1:"Click guruhi", fact2:"IT Park Uzbekistan rezidenti", fact3:"Toshkent · 2026",
   join_tag:"Jamoa", join_h:"Biz o'smoqdamiz", join_p:"Agar biz qilayotgan ish sizga yaqin bo'lsa — bizga yozing. O'zingiz va nimani qurish qiziq ekani haqida so'zlab bering.",
   f_name:"«CLICK DEV» MChJ", f_inn:"STIR 313100113", f_addr:"Toshkent, Darxon MFY, Salor bo'yi ko'chasi, 35-a", f_res:"IT Park Uzbekistan rezidenti", f_c:"© 2026 Click Dev — Click ekotizimining bir qismi"
@@ -292,6 +302,7 @@ const I18N = {
   p5_h:"Click ecosystem standards", p5_p:"We grew up in fintech: reliability, security and scale are our default.",
   about_tag:"About", about_h:"Born in the Click ecosystem", about_p:"Click Dev is an IT company of the Click group. We build products of the Click ecosystem and take on external projects that need fintech-grade reliability and high development speed.",
   bignum_t:"users in the Click ecosystem — our products run at this scale",
+  svc1a:"Discovery & design", svc1b:"Development", svc1c:"Support", svc2a:"APIs & integrations", svc2b:"High load", svc2c:"Fault tolerance", svc3a:"Agentic systems", svc3b:"Process automation", svc3c:"AI in development", svc4a:"Super-app platforms", svc4b:"Fast launch", svc4c:"User onboarding",
   fact1:"Click group", fact2:"Resident of IT Park Uzbekistan", fact3:"Tashkent · 2026",
   join_tag:"Team", join_h:"We're growing", join_p:"If what we do resonates with you — write to us. Tell us about yourself and what you'd love to build.",
   f_name:"CLICK DEV LLC", f_inn:"TIN 313100113", f_addr:"Tashkent, Darxon MFY, Salor bo'yi st., 35a", f_res:"Resident of IT Park Uzbekistan", f_c:"© 2026 Click Dev — part of the Click ecosystem"
