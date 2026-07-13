@@ -28,6 +28,7 @@ header .wrap { display:flex; align-items:center; justify-content:space-between; 
 .hero { background:var(--dark); color:#fff; min-height:92vh; display:flex; align-items:center; padding:120px 0 64px; overflow:hidden; }
 .hero .wrap { display:grid; grid-template-columns:minmax(300px,42%) minmax(320px,1fr); gap:32px; align-items:center; }
 .hero-text { text-align:left; animation:riseIn .7s ease both; }
+.hero-wordmark { width:min(440px,72%); display:block; margin-bottom:28px; }
 .hero h1 { font-size:clamp(30px,4.2vw,50px); font-weight:800; letter-spacing:-.5px; margin-bottom:18px; }
 .hero p { font-size:clamp(15px,1.6vw,19px); color:rgba(255,255,255,.65); max-width:520px; margin:0 0 34px; }
 .hero-actions { display:flex; flex-wrap:wrap; gap:12px; }
@@ -133,7 +134,8 @@ footer .req { margin-top:10px; line-height:1.8; }
 
 <section class="hero"><div class="wrap">
   <div class="hero-text">
-    <h1 data-i18n="hero_h">Строим цифровые продукты под ключ</h1>
+    <img class="hero-wordmark" src="assets/wordmark-dark.svg" alt="click dev">
+      <h1 data-i18n="hero_h">Строим цифровые продукты под ключ</h1>
     <p data-i18n="hero_p">Платформы, приложения и AI-решения для бизнеса. Родом из экосистемы Click — с финтех-стандартами надёжности.</p>
     <div class="hero-actions">
       <a class="btn" href="#join" data-i18n="hero_cta">Обсудить проект</a>
